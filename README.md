@@ -93,6 +93,17 @@ That means that this div will be displayed only for users that don't have write_
 }
 ```
 
+also in your application you have to add service with url to your api: 
+
+```javascript
+.factory(
+  'Config', function() { 
+    return {
+      apiUrl: 'http://localhost:8080/api'
+      };
+    });
+```
+
 #### Backend configuration that uses Django REST Framework
 
 ```python
