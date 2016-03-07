@@ -1,4 +1,4 @@
-# Angular authorization based on Django REST Framework tokens
+# Angular authorization based on Django REST Framework tokens, written in Coffee Script
 
 #### TL;DR
 Authenticate AngularJS app with Django (REST framework) backend using Token Based Authentication.
