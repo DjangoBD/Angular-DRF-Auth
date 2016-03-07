@@ -1,4 +1,7 @@
 'use strict'
+# AngularJS Authentication and Autorization for Django REST Framework
+# 
+# Copyright 2016 (C) TEONITE - http://teonite.com
 
 module.exports = (grunt)->
 

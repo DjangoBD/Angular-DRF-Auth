@@ -1,3 +1,7 @@
+# AngularJS Authentication and Autorization for Django REST Framework
+# 
+# Copyright 2016 (C) TEONITE - http://teonite.com
+
 if typeof String::endsWith != 'function'
 
   String::endsWith = (suffix) ->

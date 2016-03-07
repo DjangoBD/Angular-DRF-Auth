@@ -1,3 +1,7 @@
+# AngularJS Authentication and Autorization for Django REST Framework
+# 
+# Copyright 2016 (C) TEONITE - http://teonite.com
+
 angular.module("angularAuth").factory "AuthService", ['Config', 'HttpService', (Config, HttpService) ->
     login: (user) ->
         url = Config.apiRoot + "/api-token-auth/"

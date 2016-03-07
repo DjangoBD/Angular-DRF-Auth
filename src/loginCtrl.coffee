@@ -1,3 +1,7 @@
+# AngularJS Authentication and Autorization for Django REST Framework
+# 
+# Copyright 2016 (C) TEONITE - http://teonite.com
+
 angular.module("angularAuth").controller "ExampleLoginCtrl", ['$scope', '$rootScope', '$state', 'Config', 'AuthService', 'CookieService', '$http', '$timeout', ($scope, $rootScope, $state, Config, AuthService, CookieService, $http, $timeout) ->
     $scope.state = $state
     $scope.Config = Config
