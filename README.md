@@ -1,4 +1,4 @@
-# Angular authorization based on Django REST Framework tokens, written in Coffee Script
+# Angular authentication (and authorization) based on Django REST Framework tokens, written in Coffee Script
 
 #### TL;DR
 Authenticate AngularJS app with Django (REST framework) backend using Token Based Authentication.
@@ -20,7 +20,7 @@ Angular-DRF-Auth is based on Token Authentication in Django REST Framework with 
 * simple front-end template with a log-in form
 * redirection to the log-in form if unlogged user tries to enter an application
 * authorisation rights based on assigned roles
-* defining if particular webpage should require authorisation
+* defining if particular webpage should require authentication (or authorization)
 * Angular UI-Router support
 * hide/display selected elements using ```hasPermission``` and ```hasPermissionToObject``` directives depending on granted permissions
 
@@ -34,7 +34,7 @@ Angular-DRF-Auth is based on Token Authentication in Django REST Framework with 
 3) ```LoginCtrl``` posts user and password to backend's url - ```/api-token-auth``` that is managed by Django REST Framework. 
 If username and password are correct, api-token-auth returns the token in the response.
 
-4) Token is stored as a cookie and common authorization http header is set to Token and the token value.
+4) Token is stored as a cookie and common authentication http header is set to Token and the token value.
 
 5) Next there is another backend call to ```/check-auth``` which is any url managed by Django REST Framework which returns user in the response.
 
