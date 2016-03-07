@@ -1,0 +1,44 @@
+<form ng-controller="ExampleLoginCtrl" ng-submit="login()">
+    <table class="input-line">
+        <tr>
+            <td>
+                <p>Login:</p>
+            </td>
+            <td>
+                <p>Password:</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="list-input">
+                    <div class="input-group"><input ng-model="user.username" name="username" id="username" type="text" tabindex="1" class="form-control">
+                    </div>
+                    <div ng-repeat="error in errors.username" class="danger-text">
+                        {{error}}
+                    </div>
+
+                </div>
+            </td>
+            <td>
+                <div class="list-input">
+                    <div class="input-group"><input ng-model="user.password" name="password" id="password" type="password" tabindex="2" class="form-control">
+                    </div>
+                    <div ng-repeat="error in errors.password" class="danger-text">
+                        {{error}}
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div ng-repeat="error in errors.non_field_errors" class="danger-text">
+                    {{error}}
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div class="button">
+        <button type="submit" class="btn btn-primary">Login <span class="glyphicon glyphicon-lock"></span></button>
+    </div>
+
+</form>
