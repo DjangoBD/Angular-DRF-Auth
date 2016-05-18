@@ -113,4 +113,63 @@ url(r'^check-auth/', CheckAuthView.as_view()),
 class CheckAuthView(generics.views.APIView):
     def get(self, request, *args, **kwargs):
         return Response(UserWithFullGroupsSerializer(request.user).data)
+        
+
+class UserWithFullGroupsSerializer(serializers.ModelSerializer):
+
+    groups = UserGroupSerializer(many=True)
+
+    class Meta:
+        model = User
+        depth = 2
+        fields = ('id', 'first_name', 'last_name', 'username', 'groups', 'password', 'user_permissions', 'is_superuser', 'is_staff', 'is_active')
+
+
+class UserGroupSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Group
+        depth = 1
+
+
+Response:
+
+{
+  "id": 1,
+  "first_name": "",
+  "last_name": "",
+  "username": "admin",
+  "groups": [
+    {
+      "id": 6,
+      "name": "GR",
+      "permissions": [
+        {
+          "id": 261,
+          "name": "Save project",
+          "content_type": 87,
+          "codename": "save_project"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Admin",
+      "permissions": [
+        {
+          "id": 262,
+          "name": "Approve project",
+          "content_type": 87,
+          "codename": "approve_project"
+        }
+      ]
+    }
+  ],
+  "password": "pbkdf2_sha256",
+  "user_permissions": [],
+  "is_superuser": true,
+  "is_staff": true,
+  "is_active": true
+}  
+        
 ```
